@@ -35,7 +35,7 @@ set(PROJECT_SOURCE_DIR src)
 set(${PROJECT_NAME}_SOURCE_DIR ${PROJECT_SOURCE_DIR})
 add_subdirectory(${PROJECT_SOURCE_DIR})
 
-add_executable(${PROJECT_NAME})
+
 target_link_libraries(${PROJECT_NAME} EngineCore sfml-graphics sfml-audio ${PYTHON_LIBRARIES})
 
 # Install target

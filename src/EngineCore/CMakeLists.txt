@@ -1,9 +1,6 @@
 #Add EngineCore
-set(UtilsFolder ${EngineCoreFolder})
+set(UtilsFolder Utils)
 add_subdirectory(${UtilsFolder})
-
-
-
 
 
 link_directories(${UtilsFolder})
