@@ -35,7 +35,7 @@ set(PROJECT_SOURCE_DIR src)
 set(${PROJECT_NAME}_SOURCE_DIR ${PROJECT_SOURCE_DIR})
 add_subdirectory(${PROJECT_SOURCE_DIR})
 
-
+add_executable(${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME} EngineCore sfml-graphics sfml-audio ${PYTHON_LIBRARIES})
 
 # Install target
@@ -45,6 +45,6 @@ install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)
 # CPack packaging
 include(InstallRequiredSystemLibraries)
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/COPYING")
-set(CPACK_PACKAGE_VERSION_MAJOR "${XGIE_VERSION_MAJOR}")
-set(CPACK_PACKAGE_VERSION_MINOR "${XGIE_VERSION_MINOR}")
+set(CPACK_PACKAGE_VERSION_MAJOR "${SSS_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${SSS_VERSION_MINOR}")
 include(CPack)

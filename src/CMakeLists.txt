@@ -1,6 +1,7 @@
 #Add EngineCore
-add_subdirectory(EngineCore)
-link_directories(${SSS_SOURCE_DIR}/EnginerCore)
+set(EngineCoreFolder ${SSS_SOURCE_DIR}/EngineCore)
+add_subdirectory(${EngineCoreFolder})
+link_directories(${EngineCoreFolder})
 
 # Define sources and executable
 set(${PROJECT_NAME}_SOURCES

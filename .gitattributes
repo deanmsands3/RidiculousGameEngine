@@ -1,0 +1,40 @@
+# Borrowed from https://github.com/alexkaratarakis/gitattributes/blob/master/C%2B%2B.gitattributes
+# Sources
+*.c     text diff=c    filter=rcs-keywords
+*.cc    text diff=cpp  filter=rcs-keywords
+*.cxx   text diff=cpp  filter=rcs-keywords
+*.cpp   text diff=cpp  filter=rcs-keywords
+*.c++   text diff=cpp  filter=rcs-keywords
+*.hpp   text diff=cpp  filter=rcs-keywords
+*.h     text diff=c    filter=rcs-keywords
+*.h++   text diff=cpp  filter=rcs-keywords
+*.hh    text diff=cpp  filter=rcs-keywords
+
+# Compiled Object files
+*.slo   binary
+*.lo    binary
+*.o     binary
+*.obj   binary
+
+# Precompiled Headers
+*.gch   binary
+*.pch   binary
+
+# Compiled Dynamic libraries
+*.so    binary
+*.dylib binary
+*.dll   binary
+
+# Compiled Static libraries
+*.lai   binary
+*.la    binary
+*.a     binary
+*.lib   binary
+
+# Executables
+*.exe   binary
+*.out   binary
+*.app   binary
+
+.git_filters/rcs-keywords.clean text eol=lf
+.git_filters/rcs-keywords.smudge text eol=lf
