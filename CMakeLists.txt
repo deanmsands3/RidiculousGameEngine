@@ -33,10 +33,12 @@ enable_testing()
 #Add src
 set(PROJECT_SOURCE_DIR src)
 set(${PROJECT_NAME}_SOURCE_DIR ${PROJECT_SOURCE_DIR})
+
+# Add sub-folders
 add_subdirectory(${PROJECT_SOURCE_DIR})
 
 
-target_link_libraries(${PROJECT_NAME} EngineCore sfml-graphics sfml-audio ${PYTHON_LIBRARIES})
+
 
 # Install target
 install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)

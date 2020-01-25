@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.0)
+project(Utils VERSION 0.0.1 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+
+set(UTILS_HEADERS include/BitFields.h include/Defines.h include/FunctionPointers.h include/Types.h include/Versatypes.h)
+add_library(${PROJECT_NAME} ${UTILS_HEADERS})
+target_include_directories(${PROJECT_NAME} PUBLIC include)

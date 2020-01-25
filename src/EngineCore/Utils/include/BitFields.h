@@ -18,7 +18,7 @@ typedef struct{
 	uint8_t b6:1;
 	uint8_t b7:1;
 #ifdef __cplusplus
-	const uint8_t asUInt8(){
+	uint8_t asUInt8(){
 		return *(uint8_t*)this;
 	}
 #endif
@@ -41,7 +41,7 @@ typedef struct{
 	uint16_t be:1;
 	uint16_t bf:1;
 #ifdef __cplusplus
-	const uint16_t asUInt16(){
+	uint16_t asUInt16(){
 		return *(uint16_t*)this;
 	}
 #endif
@@ -81,7 +81,7 @@ typedef struct{
 	uint32_t b1e:1;
 	uint32_t b1f:1;
 #ifdef __cplusplus
-	const uint32_t asUInt32(){
+	uint32_t asUInt32(){
 		return *(uint32_t*)this;
 	}
 #endif
@@ -153,7 +153,7 @@ typedef struct{
 	uint64_t b3e:1;
 	uint64_t b3f:1;
 #ifdef __cplusplus
-	const uint64_t asUInt64(){
+	uint64_t asUInt64(){
 		return *(uint64_t*)this;
 	}
 #endif
@@ -163,7 +163,7 @@ typedef struct{
 	Bits8 lo;
 	Bits8 hi;
 #ifdef __cplusplus
-	const uint16_t asUInt16(){
+	uint16_t asUInt16(){
 		return *(uint16_t*)this;
 	}
 #endif
@@ -175,7 +175,7 @@ typedef struct{
 	Bits8 hilo;
 	Bits8 hihi;
 #ifdef __cplusplus
-	const uint32_t asUInt32(){
+	uint32_t asUInt32(){
 		return *(uint32_t*)this;
 	}
 #endif
@@ -186,7 +186,7 @@ typedef struct{
 	Bits16 lo;
 	Bits16 hi;
 #ifdef __cplusplus
-	const uint32_t asUInt32(){
+	uint32_t asUInt32(){
 		return *(uint32_t*)this;
 	}
 #endif

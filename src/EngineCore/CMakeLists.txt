@@ -1,6 +1,18 @@
-#Add EngineCore
-set(UtilsFolder Utils)
-add_subdirectory(${UtilsFolder})
+cmake_minimum_required(VERSION 3.0)
 
+# EngineCore Library
+project(EngineCore VERSION 0.0.1 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
 
-link_directories(${UtilsFolder})
+# EngineCore Sources
+set(ENGINECORE_SOURCES src/EngineCore.cpp)
+set(ENGINECORE_HEADERS include/EngineCore.h)
+add_library(${PROJECT_NAME} ${ENGINECORE_SOURCES} ${ENGINECORE_HEADERS})
+target_include_directories(${PROJECT_NAME} PUBLIC include)
+
+# Includes
+add_subdirectory(Utils)
+target_link_directories(EngineCore PUBLIC Utils)
+find_package(Threads)
+find_package(nlohmann_json REQUIRED)
+target_link_libraries(${PROJECT_NAME} nlohmann_json::nlohmann_json)
