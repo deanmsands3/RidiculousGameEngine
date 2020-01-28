@@ -15,7 +15,7 @@ endif()
 # (you can also set it on the command line: -D CMAKE_BUILD_TYPE=Release)
 
 project(SSS VERSION ${SSS_VERSION} LANGUAGES CXX)
-
+set(CMAKE_CXX_STANDARD 17)
 include_directories("${PROJECT_BINARY_DIR}")
 
 #Add required packages

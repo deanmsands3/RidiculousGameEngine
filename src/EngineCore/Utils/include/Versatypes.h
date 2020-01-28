@@ -22,11 +22,11 @@ union VersaType16{
 		int8_t hi;
 	}i8n;
 	int16_t i16;
-	const uint16_t asUInt16();
-	const int16_t asInt16();
-    VersaType16(uint16_t newU16=0);
-	uint16_t getValue() const;
-    bool operator==(const VersaType16 &rhs);
+	[[nodiscard]] uint16_t asUInt16()const ;
+	[[nodiscard]] int16_t asInt16()const ;
+    explicit VersaType16(uint16_t newU16=0);
+	[[nodiscard]] uint16_t getValue() const;
+    bool operator==(const VersaType16 &rhs) const;
 };
 
 
@@ -46,11 +46,11 @@ union VersaType32{
 	}v16n;
 
 	float  f;
-	inline const uint32_t asUInt32();
-	inline const int32_t asInt32();
-	inline uint32_t getValue() const;
-    VersaType32(uint32_t newU32=0UL);
-    bool operator==(const VersaType32 &rhs);
+	[[nodiscard]] uint32_t asUInt32() const;
+	[[nodiscard]] int32_t asInt32() const;
+	[[nodiscard]] uint32_t getValue() const;
+    explicit VersaType32(uint32_t newU32=0UL);
+    bool operator==(const VersaType32 &rhs) const;
 };
 
 union VersaType64{
@@ -100,12 +100,12 @@ union VersaType64{
 
     double d;
 
-	const uint64_t asUInt64();
-	const int64_t asInt64();
-	uint64_t getValue() const;
+	[[nodiscard]] uint64_t asUInt64()const ;
+	[[nodiscard]] int64_t asInt64()const ;
+	[[nodiscard]] uint64_t getValue() const;
 
-	VersaType64(uint64_t newU64=0ULL);
-    bool operator==(const VersaType64 &rhs);
+	explicit VersaType64(uint64_t newU64=0ULL);
+    bool operator==(const VersaType64 &rhs)const ;
 };
 
 
