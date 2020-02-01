@@ -12,7 +12,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC include)
 
 # Includes
 add_subdirectory(Utils)
-target_link_directories(EngineCore PUBLIC Utils)
+target_link_directories(${PROJECT_NAME}  PUBLIC Utils)
+add_subdirectory(TidyWorkers)
+target_link_directories(${PROJECT_NAME}  PUBLIC TidyWorkers)
 find_package(Threads)
 find_package(nlohmann_json REQUIRED)
-target_link_libraries(${PROJECT_NAME} nlohmann_json::nlohmann_json)
+target_link_libraries(EngineCore nlohmann_json::nlohmann_json)
