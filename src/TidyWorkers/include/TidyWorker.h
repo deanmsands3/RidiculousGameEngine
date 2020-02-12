@@ -8,12 +8,13 @@
 
 class TidyWorker {
 protected:
-    void virtual run();
-    void virtual setup()=0;
-    void virtual loop()=0;
-    void virtual cleanup()=0;
-    void virtual stop()=0;
+    virtual void run();
+    virtual void setup()=0;
+    virtual void loop()=0;
+
+    virtual void cleanup()=0;
 public:
+    virtual void stop()=0;
     TidyWorker();
 };
 
