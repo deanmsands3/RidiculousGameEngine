@@ -3,7 +3,7 @@
 //
 
 #include "../include/EngineCore.h"
-
+#include "../include/Sandbox.h"
 EngineCore::EngineCore() {
 
 
@@ -14,17 +14,17 @@ void EngineCore::start() {
 }
 
 void EngineCore::setup() {
-    TidyWorker::setup();
+    Sandbox sandbox;
 }
 
 void EngineCore::cleanup() {
-    TidyWorker::cleanup();
+
 }
 
 void EngineCore::loop() {
-    TidyWorker::loop();
+
 }
 
 void EngineCore::stop() {
-    TidyWorker::stop();
+
 }
