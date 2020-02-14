@@ -5,9 +5,9 @@ project(EngineCore VERSION 0.0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 
 # EngineCore Sources
-set(ENGINECORE_SOURCES src/EngineCore.cpp)
-set(ENGINECORE_HEADERS include/EngineCore.h src/Sandbox.cpp include/Sandbox.h)
-add_library(${PROJECT_NAME} ${ENGINECORE_SOURCES} ${ENGINECORE_HEADERS} src/Sandbox.cpp include/Sandbox.h)
+set(ENGINECORE_SOURCES src/EngineCore.cpp src/Sandbox.cpp src/Entity.cpp src/AssetManager.cpp)
+set(ENGINECORE_HEADERS include/EngineCore.h include/Sandbox.h include/Entity.h include/AssetManager.h)
+add_library(${PROJECT_NAME} ${ENGINECORE_SOURCES} ${ENGINECORE_HEADERS})
 target_include_directories(${PROJECT_NAME} PUBLIC include)
 
 # Includes
