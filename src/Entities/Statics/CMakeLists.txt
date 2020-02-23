@@ -1,2 +1,2 @@
-set(ACTORS_SOURCES src/Actor.cpp src/Monster.cpp src/MonsterFactory.cpp src/Player.cpp)
-set(ACTORS_HEADERS include/Actors.h include/Actor.h include/Monster.h include/MonsterFactory.h include/Player.h)
+set(STATICS_SOURCES src/Item.cpp)
+set(STATICS_HEADERS include/Statics.h include/Item.h)
