@@ -11,7 +11,7 @@
 #include "Actor.h"
 #include "Armors/Armors.h"
 #include "Attacks/Attack.h"
-namespace enDJIN {
+
 //Known States:
 //Idle
 //Wandering
@@ -41,6 +41,6 @@ public:
 	virtual void receiveAttack(const Attack &attack);
 };
 
-}; /* namespace enDJIN */
+
 
 #endif /* MONSTER_H_ */

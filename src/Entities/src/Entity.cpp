@@ -7,7 +7,6 @@
 
 #include "../include/Entity.h"
 
-namespace enDJIN {
 
 Entity::Entity(std::string filename) {
 	  if(_texture.loadFromFile(filename) == false)
@@ -26,7 +25,7 @@ Entity::Entity(std::string filename) {
 
 void Entity::Load(std::string filename)
 {
-  if(_texture.loadFromFile(filename) == false)
+  if(!_texture.loadFromFile(filename))
   {
     _filename = "";
     _isLoaded = false;
@@ -66,7 +65,6 @@ Entity::~Entity() {
 }
 void Entity::update(){
 }
-void updateEntity(Entity* that){
+void Entity::updateEntity(Entity* that){
 	that->update();
 }
-} /* namespace enDJIN */

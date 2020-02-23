@@ -7,7 +7,7 @@
 
 #include "../include/Actor.h"
 
-namespace enDJIN {
+
 
 Actor::Actor(std::string filename):Entity(filename),state(IDLE) {
 
@@ -99,4 +99,4 @@ ActorStates Actor::updateDying(){
 	return DYING;
 }
 
-} /* namespace enDJIN */
+

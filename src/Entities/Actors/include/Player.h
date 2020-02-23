@@ -12,7 +12,7 @@
 #include "Armors/Armors.h"
 #include "Attacks/Attack.h"
 
-namespace enDJIN {
+
 
 class Player: public Actor {
 	static Player *_instance;
@@ -25,6 +25,6 @@ public:
 	static void killPlayer(Player* playerToKill);
 };
 
-} /* namespace enDJIN */
+
 
 #endif /* PLAYER_H_ */

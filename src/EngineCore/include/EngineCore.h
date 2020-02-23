@@ -4,7 +4,7 @@
 
 #ifndef SSS_ENGINECORE_H
 #define SSS_ENGINECORE_H
-#include "AssetLib.h"
+#include "Assets.h"
 #include "TidyWorkers.h"
 
 

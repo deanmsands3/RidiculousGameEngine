@@ -10,14 +10,10 @@
 
 #include "Entities/Entity.h"
 
-namespace enDJIN {
-
 class Item: public Entity {
 public:
 	Item(std::string filename);
 	virtual ~Item();
 };
-
-} /* namespace enDJIN */
 
 #endif /* ITEM_H_ */

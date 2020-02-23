@@ -8,31 +8,31 @@
 #include <cstring>
 #include "../include/ByteArray.h"
 
-ByteArray::ByteArray():_length(0),_data(NULL) {
+ByteArray::ByteArray():_length(0),_data(nullptr) {
 }
 
 ByteArray::ByteArray(unsigned long length):_length(length) {
 	_data=std::make_shared<std::vector<char> >(length);
 }
 
-ByteArray::ByteArray(std::string file_name) {
+ByteArray::ByteArray(const std::string& file_name) {
 	// Open new file stream
 	std::ifstream asset_file (file_name, std::ios::binary|std::ios::ate);
 	// Find file size
     //asset_file.seekg (0, asset_file.end);
     unsigned int length = asset_file.tellg();
-    asset_file.seekg (0, asset_file.beg);
+    asset_file.seekg (0, std::ifstream::beg);
     _length=length;
     // Allocate data
     _data = std::make_shared<std::vector<char> >(length);
     char *ptr=(_data.get())->data();
     //Read in data
     asset_file.read (ptr, length);
-    asset_file.exceptions(asset_file.failbit);
+    asset_file.exceptions(std::ifstream::failbit);
 }
 
 char* ByteArray::data() const {
-	return _data.get()->data();
+	return _data->data();
 }
 
 unsigned long ByteArray::length() const {

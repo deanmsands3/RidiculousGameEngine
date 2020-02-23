@@ -7,7 +7,7 @@
 
 #include "../include/Monster.h"
 
-namespace enDJIN {
+
 
 Monster::Monster(std::string filename):Actor(filename) {
 	// TODO Auto-generated constructor stub
@@ -49,11 +49,11 @@ ActorStates Monster::updateDying(){
 }
 
 
-const Armor& enDJIN::Monster::getArmor() const {
+const Armor& Monster::getArmor() const {
 	return armor;
 }
 
-void enDJIN::Monster::setArmor(const Armor& armor) {
+void Monster::setArmor(const Armor& armor) {
 	this->armor = armor;
 }
 
@@ -61,5 +61,5 @@ void receiveAttack(const Attack &attack){
 
 }
 
-} /* namespace enDJIN */
+
 

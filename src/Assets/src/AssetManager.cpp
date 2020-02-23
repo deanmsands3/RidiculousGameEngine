@@ -18,7 +18,7 @@ using json = nlohmann::json;
 
 AssetManager::AssetManager(std::string index):_i(0) {
 	std::ifstream indexStream(index);		// Load Index file
-	FILE_LOG(logINFO) << "AssetManager: Constructor";
+//	FILE_LOG(logINFO) << "AssetManager: Constructor";
 	json root;				// Create a JSON object named root
 	try{
 		std::ifstream data("data.json");
@@ -26,8 +26,8 @@ AssetManager::AssetManager(std::string index):_i(0) {
 
 	}
 	catch(std::exception &e){
-		FILE_LOG(logERROR)<<"AssetManager::Block A";
-		FILE_LOG(logERROR)<<e.what();
+//		FILE_LOG(logERROR)<<"AssetManager::Block A";
+//		FILE_LOG(logERROR)<<e.what();
 		return;
 	}
 	try{
@@ -35,14 +35,14 @@ AssetManager::AssetManager(std::string index):_i(0) {
 		for(auto asset:assets.items()){
 			std::string assetName=asset.key();
 			std::string fileName = asset.value().at("file");
-			FILE_LOG(logINFO)<< "AssetManager: Adding " << fileName;
+//			FILE_LOG(logINFO)<< "AssetManager: Adding " << fileName;
 			this->push_asset(fileName, assetName);
 		}
 
 	}
 	catch(std::exception &e){
-		FILE_LOG(logERROR)<<"AssetManager::Block B";
-		FILE_LOG(logERROR)<<e.what();
+//		FILE_LOG(logERROR)<<"AssetManager::Block B";
+//		FILE_LOG(logERROR)<<e.what();
 		return;
 	}
 
@@ -77,7 +77,7 @@ void AssetManager::free_asset(std::string asset_name) {
 }
 
 void AssetManager::_free_asset(unsigned int asset_id, std::string asset_name) {
-	FILE_LOG(logINFO) << "AssetManager: Freeing " << asset_name;
+//	FILE_LOG(logINFO) << "AssetManager: Freeing " << asset_name;
 	_lock_up();
 	ByteArray *delete_me = _ids_assets[asset_id];
 	_ids_strings.erase(asset_id);
@@ -108,7 +108,9 @@ AssetManager::AssetManager(const AssetManager& that):
 	_strings_ids(that._strings_ids),
 	_ids_strings(that._ids_strings),
 	_ids_assets(that._ids_assets)
-	{FILE_LOG(logINFO) << "AssetManager: Copy Constructor";}
+{
+//	FILE_LOG(logINFO) << "AssetManager: Copy Constructor";
+}
 
 //Copy Constructor
 AssetManager::AssetManager(const AssetManager* that):
@@ -116,7 +118,9 @@ AssetManager::AssetManager(const AssetManager* that):
 	_strings_ids(that->_strings_ids),
 	_ids_strings(that->_ids_strings),
 	_ids_assets(that->_ids_assets)
-	{FILE_LOG(logINFO)<< "AssetManager: Copy Constructor";}
+	{
+//    FILE_LOG(logINFO)<< "AssetManager: Copy Constructor";
+	}
 
 void AssetManager::_lock_up() {
 	_lock.lock();
@@ -128,8 +132,8 @@ void AssetManager::_unlock() {
 
 //Destructor
 AssetManager::~AssetManager() {
-	FILE_LOG(logINFO)<< "AssetManager: Destructor";
-	for(auto id_string:_ids_strings){
+//	FILE_LOG(logINFO)<< "AssetManager: Destructor";
+	for(const auto& id_string:_ids_strings){
 		unsigned asset_id = id_string.first;
 		free_asset(asset_id);
 	}
