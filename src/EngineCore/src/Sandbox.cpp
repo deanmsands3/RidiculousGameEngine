@@ -11,4 +11,5 @@ Sandbox::Sandbox(){
     py::scoped_interpreter guard{}; // start the interpreter and keep it alive
 
     py::print("Hello, World!"); // use the Python API
+    py::print("This is a test!"); // use the Python API
 }
