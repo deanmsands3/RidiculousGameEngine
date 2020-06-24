@@ -30,7 +30,7 @@ public:
 
   std::unordered_map<unsigned int, Entity*>::iterator begin();
   std::unordered_map<unsigned int, Entity*>::iterator end();
-  EntityManager(std::shared_ptr<AssetManager> asset_manager);
+  explicit EntityManager(std::shared_ptr<AssetManager> asset_manager);
   virtual ~EntityManager();
 };
 
