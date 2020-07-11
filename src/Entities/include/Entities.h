@@ -7,7 +7,8 @@
 
 #ifndef SRC_ENTITIES_ENTITIES_H_
 #define SRC_ENTITIES_ENTITIES_H_
-#include "../Actors/include/Actors.h"
 #include "Entity.h"
+#include "EntityManager.h"
+#include "../Actors/include/Actors.h"
 #include "../Statics/include/Statics.h"
 #endif /* SRC_ENTITIES_ENTITIES_H_ */

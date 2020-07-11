@@ -12,7 +12,7 @@
 #include <json/json.h>
 #include "Monster.h"
 
-namespace enDJIN {
+
 
 class MonsterFactory {
 	std::unordered_map<std::string, Monster> mapOfMonsterTemplates;
@@ -21,6 +21,6 @@ public:
 	virtual ~MonsterFactory();
 };
 
-}; /* namespace enDJIN */
+
 
 #endif /* MONSTERFACTORY_H_ */

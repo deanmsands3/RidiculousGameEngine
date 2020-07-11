@@ -7,7 +7,7 @@
 
 #include "../include/Player.h"
 
-namespace enDJIN {
+
 
 Player::Player(std::string filename):Actor(filename) {
 	// TODO Auto-generated constructor stub
@@ -38,4 +38,4 @@ void Player::killPlayer(Player* playerToKill=Player::_instance) {
 
 }
 
-} /* namespace enDJIN */
+

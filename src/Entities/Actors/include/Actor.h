@@ -9,7 +9,7 @@
 #define ACTOR_H_
 #include "Entities/Entity.h"
 
-namespace enDJIN {
+
 
 typedef enum {
 	IDLE,
@@ -48,6 +48,6 @@ public:
 	virtual ActorStates updateDying();
 };
 
-} /* namespace enDJIN */
+
 
 #endif /* ACTOR_H_ */

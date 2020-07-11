@@ -9,8 +9,8 @@
 #define ENTITY_H_
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
-//#include "Utils.h"
-namespace enDJIN {
+#include <string>
+
 class Entity {
 private:
 	sf::Sprite  _sprite;
@@ -29,6 +29,5 @@ public:
 	static void updateEntity(Entity* that);
 };
 
-} /* namespace enDJIN */
 
 #endif /* ENTITY_H_ */
