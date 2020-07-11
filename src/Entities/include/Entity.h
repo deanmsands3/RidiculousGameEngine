@@ -9,7 +9,7 @@
 #define ENTITY_H_
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
-#include "Utils.h"
+//#include "Utils.h"
 namespace enDJIN {
 class Entity {
 private:
