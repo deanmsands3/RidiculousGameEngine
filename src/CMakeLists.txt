@@ -2,6 +2,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 #Add sub-folders
 add_subdirectory(EngineCore)
+
+add_subdirectory(Configurator)
 add_subdirectory(Assets)
 add_subdirectory(TidyWorkers)
 add_subdirectory(Entities)
@@ -15,6 +17,7 @@ add_executable(${PROJECT_NAME} ${${PROJECT_NAME}_SOURCES})
 
 target_link_libraries(${PROJECT_NAME} PUBLIC EngineCore)
 target_link_libraries(${PROJECT_NAME} PUBLIC Utils)
+target_link_libraries(${PROJECT_NAME} PUBLIC Configurator)
 target_link_libraries(${PROJECT_NAME} PUBLIC Assets)
 target_link_libraries(${PROJECT_NAME} PUBLIC Entities)
 target_link_libraries(${PROJECT_NAME} PUBLIC TidyWorkers)

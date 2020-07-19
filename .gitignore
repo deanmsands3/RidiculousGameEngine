@@ -33,3 +33,9 @@
 /.idea/
 /cmake-build-debug/
 /build/
+
+# Eclipse
+.settings
+.cproject
+.project
+

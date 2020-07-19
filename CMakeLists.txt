@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
+set(CMAKE_CXX_STANDARD 17)
+
 #Enable cmake_modules
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
 
@@ -7,15 +9,17 @@ include(GNUInstallDirs)
 include(CommonCompilers)
 include(__version__)
 
+
 # Enable debug symbols by default
-# must be done before project() statement
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Debug CACHE STRING "Choose the type of build (Debug or Release)" FORCE)
 endif()
-# (you can also set it on the command line: -D CMAKE_BUILD_TYPE=Release)
 
+# Name of the Project
 project(SSS VERSION ${SSS_VERSION} LANGUAGES CXX)
-set(CMAKE_CXX_STANDARD 17)
+
+
+# Include
 include_directories("${PROJECT_BINARY_DIR}")
 
 #Add required packages
