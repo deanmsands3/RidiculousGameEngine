@@ -7,7 +7,7 @@
 
 #include "../include/Item.h"
 
-Item::Item(std::string filename):Entity(filename){
+Item::Item(const std::string &filename):Entity(filename){
 	// TODO Auto-generated constructor stub
 }
 

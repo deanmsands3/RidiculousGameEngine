@@ -9,7 +9,7 @@
 
 
 
-Monster::Monster(std::string filename):Actor(filename) {
+Monster::Monster(const std::string &filename):Actor(filename) {
 	// TODO Auto-generated constructor stub
 
 }

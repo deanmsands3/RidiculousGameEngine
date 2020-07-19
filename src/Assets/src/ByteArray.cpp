@@ -11,9 +11,9 @@
 ByteArray::ByteArray():_length(0),_data(nullptr) {
 }
 
-ByteArray::ByteArray(unsigned long length):_length(length) {
-	_data=std::make_shared<std::vector<char> >(length);
-}
+ByteArray::ByteArray(unsigned long length):
+    _length(length),
+    _data(std::make_shared<std::vector<char> >(_length)) {}
 
 ByteArray::ByteArray(const std::string& file_name) {
 	// Open new file stream
@@ -39,8 +39,7 @@ unsigned long ByteArray::length() const {
 	return _length;
 }
 
-ByteArray::ByteArray(const ByteArray &that):_length(that._length),_data(that._data){
-}
+ByteArray::ByteArray(const ByteArray &that):_length(that._length),_data(that._data){};
 
 ByteArray::~ByteArray() {
 	_length = 0;

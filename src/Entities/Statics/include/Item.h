@@ -12,7 +12,7 @@
 
 class Item: public Entity {
 public:
-	Item(std::string filename);
+	Item(const std::string &filename);
 	virtual ~Item();
 };
 

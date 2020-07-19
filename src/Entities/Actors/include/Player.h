@@ -16,7 +16,7 @@
 
 class Player: public Actor {
 	static Player *_instance;
-	Player(std::string filename);
+	Player(const std::string &filename);
 public:
 	Player* init(const std::string& filename);
 	void update();

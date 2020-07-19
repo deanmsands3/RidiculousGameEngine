@@ -9,9 +9,10 @@
 
 
 
-Actor::Actor(std::string filename):Entity(filename),state(IDLE) {
-
-}
+Actor::Actor(const std::string &filename):
+    Entity(filename),
+    state(IDLE),
+    health(0) {}
 
 Actor::~Actor() {
 	// TODO Auto-generated destructor stub

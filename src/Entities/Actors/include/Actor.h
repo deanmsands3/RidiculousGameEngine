@@ -31,7 +31,7 @@ private:
 	unsigned long health;
 public:
 	void update();
-	Actor(std::string filename);
+	Actor(const std::string &filename);
 	virtual ~Actor();
 
 	sf::Vector2f getVelocity() const;

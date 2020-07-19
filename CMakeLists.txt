@@ -22,8 +22,8 @@ include_directories("${PROJECT_BINARY_DIR}")
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 set(SFML_STATIC_LIBRARIES TRUE)
 
-find_package(PythonLibs 3.7 REQUIRED)
-find_package(Boost 1.65.0 REQUIRED)
+find_package(PythonLibs 3.8 REQUIRED)
+find_package(Boost 1.71.0 REQUIRED)
 
 include_directories(${PYTHON_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
 

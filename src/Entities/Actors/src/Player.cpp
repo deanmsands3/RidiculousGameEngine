@@ -9,7 +9,7 @@
 
 
 
-Player::Player(std::string filename):Actor(filename) {
+Player::Player(const std::string &filename):Actor(filename) {
 	// TODO Auto-generated constructor stub
 
 }

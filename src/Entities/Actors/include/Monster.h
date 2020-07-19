@@ -24,7 +24,7 @@ class Monster: public Actor {
 	//unsigned long health; //Inherited from Actor
 	Armor armor;
 public:
-	Monster(std::string filename);
+	Monster(const std::string &filename);
 	virtual ~Monster();
 	virtual ActorStates updateIdle();
 	virtual ActorStates updateWandering();
