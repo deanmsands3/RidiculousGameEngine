@@ -27,7 +27,7 @@ ByteArray::ByteArray(const std::string& file_name) {
     _data = std::make_shared<std::vector<char> >(length);
     char *ptr=(_data.get())->data();
     //Read in data
-    asset_file.read (ptr, length);
+    asset_file.read (ptr, length);  /* Flawfinder: ignore */
     asset_file.exceptions(std::ifstream::failbit);
 }
 
