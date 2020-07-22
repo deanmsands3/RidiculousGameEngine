@@ -177,7 +177,7 @@ inline std::string NowTime()
 	struct timeval tv;
 	gettimeofday(&tv, 0);
 	char result[100] = {0};
-	std::sprintf(result, "%s.%03ld", buffer, (long)tv.tv_usec / 1000);
+	std::snprintf(result, 100, "%s.%03ld", buffer, (long)tv.tv_usec / 1000);
 	return result;
 }
 
