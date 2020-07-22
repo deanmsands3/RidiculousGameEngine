@@ -13,7 +13,9 @@
 class EngineCore: public TidyThread {
     std::shared_ptr<sf::RenderWindow> _window;
     sf::Clock _clock;
+    bool _running;
 protected:
+    bool isRunning() const;
     void setup() override;
     void loop() override;
     virtual sf::Time tick();

@@ -4,7 +4,7 @@
 
 #include "../include/EngineCore.h"
 #include "../include/Sandbox.h"
-EngineCore::EngineCore(): _clock() {}
+EngineCore::EngineCore(): _clock(), _running(true) {}
 
 void EngineCore::start() {
     TidyThread::start();
@@ -18,7 +18,7 @@ void EngineCore::setup() {
 }
 
 void EngineCore::cleanup() {
-
+    getWindow()->close();
 }
 sf::Clock EngineCore::getClock() const {
     return _clock;
@@ -29,14 +29,16 @@ std::shared_ptr<sf::RenderWindow> EngineCore::getWindow(){
 }
 
 void EngineCore::loop() {
-    while (getWindow()->isOpen())
-    {
+    //If the game's still running and the window's still open, keep ticking.
+    while (
+        isRunning() && (getWindow()->isOpen())
+    ){
         tick();
     }
 }
 
 void EngineCore::stop() {
-    getWindow()->close();
+    _running=false;
 }
 
 sf::Time EngineCore::tick() {
@@ -62,4 +64,8 @@ bool EngineCore::processEvents() {
             return true;
     }
     return false;
+}
+
+bool EngineCore::isRunning() const {
+    return _running;
 }
