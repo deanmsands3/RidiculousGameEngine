@@ -2,6 +2,7 @@
 // Created by dean on 1/24/20.
 //
 
+#include <iostream>
 #include "../include/EngineCore.h"
 #include "../include/Sandbox.h"
 EngineCore::EngineCore(): _clock(), _running(true) {}
@@ -11,8 +12,18 @@ void EngineCore::start() {
 }
 
 void EngineCore::setup() {
+    sf::ContextSettings settings;
+    settings.depthBits = 24;
+    settings.stencilBits = 8;
+    settings.antialiasingLevel = 2; // Optional
+// Request OpenGL version 3.2
+    settings.majorVersion = 3;
+    settings.minorVersion = 2;
+    settings.attributeFlags = sf::ContextSettings::Core;
     _window=std::make_shared<sf::RenderWindow>(
-        sf::VideoMode(200, 200), "Soldiers of Steam and Steel"
+        sf::VideoMode(800, 600),
+        "Soldiers of Steam and Steel",
+        sf::Style::Close, settings
     );
     Sandbox sandbox;
 }
@@ -60,8 +71,13 @@ bool EngineCore::processEvents() {
     sf::Event event;
     while (getWindow()->pollEvent(event))
     {
-        if (event.type == sf::Event::Closed)
-            return true;
+        switch(event.type){
+            case sf::Event::Closed:
+                return true;
+            case sf::Event::KeyPressed:
+                if (event.key.code == sf::Keyboard::Escape){return true;}
+                break;
+        }
     }
     return false;
 }
