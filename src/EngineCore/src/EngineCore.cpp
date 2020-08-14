@@ -3,8 +3,8 @@
 //
 
 #include "../include/EngineCore.h"
-#include "../include/Sandbox.h"
-EngineCore::EngineCore(): _clock(), _running(true) {}
+
+EngineCore::EngineCore(): _clock(), _running(true), sandbox() {}
 
 void EngineCore::start() {
     TidyThread::start();
@@ -12,9 +12,9 @@ void EngineCore::start() {
 
 void EngineCore::setup() {
     _window=std::make_shared<sf::RenderWindow>(
-        sf::VideoMode(200, 200), "Soldiers of Steam and Steel"
+        sf::VideoMode(800, 600), "Soldiers of Steam and Steel"
     );
-    Sandbox sandbox;
+
 }
 
 void EngineCore::cleanup() {
@@ -33,7 +33,8 @@ void EngineCore::loop() {
     while (
         isRunning() && (getWindow()->isOpen())
     ){
-        tick();
+        auto tick_time=tick();
+        sf::sleep(calc_sleep_time(tick_time));
     }
 }
 
@@ -48,9 +49,10 @@ sf::Time EngineCore::tick() {
         stop();
         return sf::Time();
     }
+    sandbox.tick();
 
     getWindow()->clear();
-    //_window->draw(shape);
+    getWindow()->draw(sandbox);
     getWindow()->display();
     auto tick_time=_clock.getElapsedTime();
     return tick_time;
@@ -68,4 +70,12 @@ bool EngineCore::processEvents() {
 
 bool EngineCore::isRunning() const {
     return _running;
+}
+
+sf::Time EngineCore::calc_sleep_time(sf::Time tick_time) {
+    auto micros_spent=tick_time.asMicroseconds();
+    auto time_to_sleep=(MICROS_PER_TICK-micros_spent);
+    if (time_to_sleep<=0){time_to_sleep=1;}
+    auto micros_to_sleep=sf::microseconds(time_to_sleep);
+    return micros_to_sleep;
 }
