@@ -9,7 +9,6 @@ include(GNUInstallDirs)
 include(CommonCompilers)
 include(__version__)
 
-
 # Enable debug symbols by default
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Debug CACHE STRING "Choose the type of build (Debug or Release)" FORCE)
@@ -40,9 +39,6 @@ set(${PROJECT_NAME}_SOURCE_DIR ${PROJECT_SOURCE_DIR})
 
 # Add sub-folders
 add_subdirectory(${PROJECT_SOURCE_DIR})
-
-
-
 
 # Install target
 install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)

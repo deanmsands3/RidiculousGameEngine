@@ -14,6 +14,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC include)
 find_package(Threads)
 find_package(nlohmann_json REQUIRED)
 find_package(pybind11 REQUIRED)
+
 target_link_libraries(${PROJECT_NAME} PUBLIC nlohmann_json::nlohmann_json)
 target_link_libraries(${PROJECT_NAME} PUBLIC Utils)
 target_link_libraries(${PROJECT_NAME} PUBLIC Assets)

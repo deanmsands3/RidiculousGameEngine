@@ -15,6 +15,11 @@ set(${PROJECT_NAME}_SOURCES main.cpp )
 add_executable(${PROJECT_NAME} ${${PROJECT_NAME}_SOURCES})
 
 
+if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+    target_compile_options(${PROJECT_NAME}  INTERFACE -fsized-deallocation)
+endif()
+
+
 target_link_libraries(${PROJECT_NAME} PUBLIC EngineCore)
 target_link_libraries(${PROJECT_NAME} PUBLIC Utils)
 target_link_libraries(${PROJECT_NAME} PUBLIC Configurator)

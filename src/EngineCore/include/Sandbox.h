@@ -15,7 +15,7 @@ class Sandbox: public sf::Drawable {
 protected:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 public:
-
+    virtual ~Sandbox();
     Sandbox();
     void tick();
 };

@@ -31,6 +31,7 @@ public:
     void start() override;
     void stop() override;
     EngineCore();
+    virtual ~EngineCore();
 };
 
 

@@ -3,15 +3,17 @@
 //
 
 #include "Sandbox.h"
-//#include <pybind11/embed.h> // everything needed for embedding
+#include <pybind11/embed.h> // everything needed for embedding
 
-//namespace py = pybind11;
+namespace py = pybind11;
+
 
 Sandbox::Sandbox():Drawable(){
-//    py::scoped_interpreter guard{}; // start the interpreter and keep it alive
-//
-//    py::print("Hello, World!"); // use the Python API
-//    py::print("This is a test!"); // use the Python API
+    py::scoped_interpreter guard{}; // start the interpreter and keep it alive
+    auto global = py::dict(py::module::import("__main__").attr("__dict__"));
+    auto local = py::dict();
+    py::print("Hello, World!"); // use the Python API
+    py::print("This is a test!"); // use the Python API
     _star.loadFromFile("star.png");
     star.setTexture(_star);
     star.setOrigin(100,100);
@@ -25,3 +27,7 @@ void Sandbox::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 void Sandbox::tick() {
     star.rotate(1.0);
 }
+
+Sandbox::~Sandbox() = default;
+
+
