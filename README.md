@@ -1,2 +1,2 @@
-# SSS.cpp
-C++ Engine for Soldiers of Steam and Steel
+# Ridiculous Game Engine
+Multipurpose C++ Game Engine 
