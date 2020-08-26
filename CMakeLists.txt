@@ -15,7 +15,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Name of the Project
-project(SSS VERSION ${SSS_VERSION} LANGUAGES CXX)
+project(RidiculousGameEngine VERSION ${RGE_VERSION} LANGUAGES CXX)
 
 
 # Include
@@ -25,10 +25,10 @@ include_directories("${PROJECT_BINARY_DIR}")
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 set(SFML_STATIC_LIBRARIES TRUE)
 
-find_package(PythonLibs 3.8 REQUIRED)
-find_package(Boost 1.71.0 REQUIRED)
+#find_package(PythonLibs 3.8 REQUIRED)
+#find_package(Boost 1.71.0 REQUIRED)
 
-include_directories(${PYTHON_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+#include_directories(${PYTHON_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
 
 enable_testing()
 
