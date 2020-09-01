@@ -9,23 +9,15 @@
 #define ENTITY_H_
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
+#include <vector>
 #include <string>
+#include "TickingDrawable.h"
 
-class Entity {
-private:
-	sf::Sprite  _sprite;
-	sf::Texture _texture;
-	bool _isLoaded;
-	std::string _filename;
+class Entity: TickingDrawable{
 public:
-	Entity(std::string filename);
+	Entity();
 	virtual ~Entity();
-	virtual void update();
-	virtual void Load(std::string filename);
-	virtual void Draw(sf::RenderWindow & window);
-	sf::Vector2f getLocation() const;
-	void setLocation(const sf::Vector2f& position);
-	void setLocation(float x, float y);
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	static void updateEntity(Entity* that);
 };
 

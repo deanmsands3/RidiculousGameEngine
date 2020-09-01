@@ -12,10 +12,13 @@
 #define TICKS_PER_SECOND (32.0)
 #define MICROS_PER_TICK ((sf::Int64)(1000000.0/TICKS_PER_SECOND))
 class EngineCore: public TidyThread {
+
+private:
     std::shared_ptr<sf::RenderWindow> _window;
     sf::Clock _clock;
     bool _running;
     Sandbox sandbox;
+
 protected:
     [[nodiscard]] bool isRunning() const;
     void setup() override;

@@ -10,8 +10,8 @@
 #include <SFML/Graphics/Drawable.hpp>
 
 class Sandbox: public sf::Drawable {
-    sf::Texture _star;
-    sf::Sprite star;
+    sf::Texture _star_texture;
+    sf::Sprite star_sprite;
 protected:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 public:
