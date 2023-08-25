@@ -13,6 +13,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC include)
 # Includes
 find_package(Threads)
 find_package(nlohmann_json REQUIRED)
+find_package(Python COMPONENTS Interpreter Development REQUIRED)
 find_package(pybind11 REQUIRED)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC nlohmann_json::nlohmann_json)
@@ -21,4 +22,5 @@ target_link_libraries(${PROJECT_NAME} PUBLIC Assets)
 target_link_libraries(${PROJECT_NAME} PUBLIC Entities)
 target_link_libraries(${PROJECT_NAME} PUBLIC TidyWorkers)
 target_link_libraries(${PROJECT_NAME} PUBLIC Configurator)
+target_link_libraries(${PROJECT_NAME} PRIVATE Python::Python)
 target_link_libraries(${PROJECT_NAME} PRIVATE pybind11::embed)
